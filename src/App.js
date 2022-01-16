@@ -1,24 +1,29 @@
 import logo from './logo.svg';
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
 import './App.css';
-
+import Navbar from './mycomponents/Navbar'
+import TextForm from './mycomponents/TextForm';
+import About from './mycomponents/About'
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    {/* <Router> */}
+    <Navbar title="UpperCase" sm="Conversion"/>
+    <TextForm/>
+    <About/>
+    {/* <Routes> */}
+      {/* always use exact path to avoid partial matching eg home/ab ==home */}
+          {/* <Route exact path='/' element={<TextForm/>} />
+          <Route exact path='/about' element={<About/>} />
+    </Routes>
+    </Router> */}
+    </>
   );
 }
 
